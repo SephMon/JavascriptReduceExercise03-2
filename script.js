@@ -20,6 +20,9 @@ const eventData = events.reduce((acc,curValue)=> {
     }
 },{})
 
+const dublinEvents = events.filter(loc1 => loc1.location === "Dublin")
+console.log(dublinEvents)
+
 const corkEvents = events.filter(loc => loc.location === "Cork")
 console.log(corkEvents)
 
