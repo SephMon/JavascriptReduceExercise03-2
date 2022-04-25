@@ -11,3 +11,19 @@ const events = [
     {title: "The Wanted",location: "Dublin",date: "08/04/2022",capacity: 34000,price: 78.00}
 ]
 
+const eventData = events.reduce((acc,curValue)=> {
+    const location = curValue.location
+    const locationCount = acc[location] ? acc[location] + 1 : 1
+    return{
+        ...acc,
+        [location]:locationCount,
+    }
+},{})
+
+const corkEvents = events.filter(loc => loc.location === "Cork")
+console.log(corkEvents)
+
+const corkCombinedCapacity = corkEvents.reduce((acc,totalCorkCap)=> 
+acc + totalCorkCap.capacity,0)
+console.log(eventData)
+console.log(corkCombinedCapacity)
